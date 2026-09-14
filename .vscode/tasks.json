@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "inputs": [
+        {
+            "id": "modid",
+            "type": "promptString",
+            "description": "Mod ID"
+        }
+    ],
+    "tasks": [
+        {
+            "label": "Packwiz: Init",
+            "type": "shell",
+            "command": "packwiz init",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "Packwiz: Refresh Index",
+            "type": "shell",
+            "command": "packwiz refresh",
+            "problemMatcher": []
+        },
+        {
+            "label": "Set Platform: Curseforge",
+            "type": "shell",
+            "command": "echo cf > .vscode/.packwiz_platform",
+            "problemMatcher": []
+        },
+        {
+            "label": "Set Platform: Modrinth",
+            "type": "shell",
+            "command": "echo mr > .vscode/.packwiz_platform",
+            "problemMatcher": []
+        },
+        {
+            "label": "Packwiz: Add Mod",
+            "type": "shell",
+            "command": "packwiz $(cat .vscode/.packwiz_platform) add ${input:modid}",
+            "problemMatcher": []
+        },
+        {
+            "label": "Packwiz: Export Pack",
+            "type": "shell",
+            "command": "packwiz $(cat .vscode/.packwiz_platform) export",
+            "problemMatcher": []
+        }
+    ]
+}
