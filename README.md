@@ -5,4 +5,4 @@
 Clone this repository, then run:
 
 ```bash
-./scripts/init.sh
+./.scripts/init.sh
